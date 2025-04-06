@@ -59,3 +59,7 @@ body {
     outline: none !important;
   }
 }
+
+input.ng-touched.ng-invalid {
+  border: 1px solid crimson !important;
+}

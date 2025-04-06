@@ -38,7 +38,6 @@ export class EditProductComponent {
         this.loading.set(false)
         this.toastr.success("Updated Successfully")
         this.dialogRef.close(this.form.value)
-
       },
       err => {
         this.loading.set(false)

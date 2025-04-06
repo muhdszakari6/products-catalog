@@ -10,10 +10,9 @@
 
   <input class="w-full" type="number" app-input formControlName="price" placeholder="Price">
 
-
   <div class="flex justify-end my-4 gap-3">
     <button type="button" (click)="dialogRef.close()" variant="outlined" app-button>Cancel</button>
-    <button type="submit" [disabled]="loading()" variant="filled" app-button>Save</button>
+    <button type="submit" [disabled]="loading() || !form.valid" variant="filled" app-button>Save</button>
   </div>
 
 </form>
