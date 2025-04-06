@@ -1,0 +1,14 @@
+<div>
+  <input #input [ngClass]="{'border border-[#c82020]': showError}" (click)="toggleDropdown()" type="text"
+    [readOnly]="!autocomplete" [value]="selectedOption ? selectedOption.label : null" [placeholder]="placeholder"
+    app-input [size]="size" [variant]="variant" [rounded]="rounded" [prefix]="prefix" [disabled]="disabled"
+    [suffix]="suffix" (change)="emitChange()" class="relative w-full">
+  <ul #dropdown [ngClass]="{'hidden': !dropdownOpen}" [style.top]="top+'px'" [style.left]="left+'px'"
+    [style.bottom]="bottom ? bottom+'px' : 'unset'" [style.width]="width+'px'"
+    class="flex flex-col z-30 rounded-2xl px-6 py-2 fixed bg-white shadow-dropdown w-auto mt-2 overflow-y-auto max-h-[200px] h-fit">
+    <li *ngFor="let option of options" class="py-1 my-1 cursor-pointer hover:text-primary-500"
+      (click)="selectOption(option)">
+      {{option.label}}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,20 @@
+<div class="max-w-xs cursor-pointer shadow rounded-lg px-6 py-4">
+  <img class="min-h-[3rem] " [src]="img()" alt={title} />
+  <p class="text-gray-400 text-xs mt-3">{{category()}}</p>
+  <h3 class="mt-1 text-black text-sm font-semibold">{{title()}}</h3>
+  <div class="flex items-end">
+    <div class="mt-2 flex items-center tracking-lg ">
+      <span class="text-gray-400 text-xs ml-0.5 leading-7">
+        {{rating()}}
+      </span>
+      <span class="text-gray-400 text-xs ml-0.5 leading-7">|</span>
+      <span class="text-gray-400 text-xs ml-0.5 leading-7">
+        {{review()}}
+      </span>
+    </div>
+    <h3 class="text-sm text-primary-500 font-semibold ml-auto leading-7">
+      {{price()}}
+    </h3>
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+<form [formGroup]="form" (submit)="submit()" class="bg-white rounded-md p-4">
+  <h1 class="text-xl mb-4 font-semibold lg:mb-0">Edit Product</h1>
+  <div class="mt-4">
+  </div>
+
+  <input class="w-full" type="text" app-input formControlName="title" placeholder="Title">
+
+  <app-select formControlName="category" placeholder="Select a category" class="my-4"
+    [options]="data.categories"></app-select>
+
+  <input class="w-full" type="number" app-input formControlName="price" placeholder="Price">
+
+
+  <div class="flex justify-end my-4 gap-3">
+    <button type="button" (click)="dialogRef.close()" variant="outlined" app-button>Cancel</button>
+    <button type="submit" [disabled]="loading()" variant="filled" app-button>Save</button>
+  </div>
+
+</form>

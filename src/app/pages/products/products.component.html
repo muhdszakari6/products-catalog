@@ -1,0 +1,15 @@
+<form [formGroup]="form" class="flex gap-4 max-w-sm">
+  <app-select data-test-id="category-select" formControlName="category" placeholder="Select a category"
+    [options]="categories()"></app-select>
+  <input data-test-id="search-input" type="text" app-input formControlName="search" placeholder="Search">
+</form>
+
+<div class="grid md:grid-cols-4 my-6 gap-4 items-stretch">
+  @for (product of products(); track product.id) {
+  <div data-test-id="product" (click)="edit(product)">
+    <app-product [category]="product.category" [price]="product.price" [rating]="product.rating"
+      [img]="product.thumbnail" [title]="product.title" [review]="product.reviews.length"></app-product>
+  </div>
+
+  }
+</div>
